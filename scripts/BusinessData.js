@@ -114,3 +114,45 @@ const businesses = [
   export const busData = () => {
       return businesses.slice();
   }
+
+  const newyorkfilter = (parameter) => {
+    // const allbuses = businesses
+    const newyork = [];
+    for (let company of parameter) {
+      if (company.addressStateCode === "NY") {
+        newyork.push(company);
+      }
+      // console.log(newyork)
+      
+    }
+    return newyork;
+  }
+
+  export const newyorkers = newyorkfilter(businesses);
+
+  export const manufactureBusiness = businesses.filter(company => {
+    if (company.companyIndustry === "Manufacturing") {
+      return true;
+    }
+    return false;
+  })
+
+ 
+  export const agentName = businesses.map( agent => {
+    return {nameFirst: agent.purchasingAgent.nameFirst, 
+          nameLast: agent.purchasingAgent.nameLast,
+          companyName: agent.companyName,
+          phoneWork: agent.phoneWork
+        }
+  })
+  console.log(agentName)
+
+  // export const agentContact = () => {
+  //   const fullAgentInfo = agentName();
+  //   for (agent of fullAgentInfo) {
+  //     if (agent.nameLast === businesses.purchasingAgent.nameLast) {
+  //       fullAgentInfo.push(companyName,phoneWork)
+  //     }
+  //   }
+  // }
+  
