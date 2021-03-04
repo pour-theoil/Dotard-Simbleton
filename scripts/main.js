@@ -1,4 +1,15 @@
 import { BusinessList } from "./BusinessList.js"
+import { newYorkbus } from './NewyorkList.js'
+import { manuBusines } from "./manufaturebusiness.js"
+import { allAgents } from "./purchasingagent.js"
 
-const alltheBusinesses = BusinessList();
-console.log(alltheBusinesses);
+BusinessList();
+
+
+newYorkbus();
+
+
+manuBusines();
+
+
+allAgents();
